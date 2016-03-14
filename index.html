@@ -22,6 +22,22 @@
 <body>
 
 <div class="container">
+    <div class="alert info" role="alert"><a href="https://github.com/azarakovsky/inline-translator">Github</a></div>
+    <div class="row">
+        <ol>
+            <li>Drag-n-drop generated link to your bookmarks panel.</li>
+            <li>Go to a desired language (from) website</li>
+            <li>
+                <ul>
+                    <li>Select text you want to translate (better a paragraph, so not the whole page)</li>
+                    <li>Click the bookmark</li>
+                    <li>The second click will erase translated data for the whole page</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <hr/>
     <div class="row">
         <div class="col-xs-12 col-md-12">
             <form>
@@ -51,7 +67,7 @@
                 <button onclick="generate(); return false;">Generate</button>
             </form>
 
-            <br/>
+            <hr/>
             <p id="result"></p>
         </div>
     </div>
@@ -63,12 +79,14 @@
 
         var direction = jQuery("#from").val() + "-" + jQuery("#to").val();
         var css = jQuery("#css").val();
-        jQuery("#result").html(
+        jQuery("#result").html("Add this to bookmarks panel: ").append(
                 jQuery("<a>" + direction.toUpperCase() + "</a>")
                         .attr("href",
                                 str
                                         .replace("DIRECTION", encodeURIComponent(direction))
-                                        .replace("CSSSTYLE", encodeURIComponent(css))));
+                                        .replace("CSSSTYLE", encodeURIComponent(css)))
+        )
+        ;
 
 
     }
