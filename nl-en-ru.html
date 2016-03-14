@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NL -> EN/RU</title>
+</head>
+<body>
+<ol>
+	<li>Drag-n-drop one or two links below to your bookmarks panel.</li>
+	<li>Go to a Dutch website</li>
+	<li>
+		<ul>
+			<li>Select text you want to translate (better a paragraph, so not the whole page)</li>
+			<li>Click the bookmark</li>
+			<li>The second click will erase translated data forthe whole page</li>
+		</ul>
+	</li>
+</ol>
+
+<br/>
+<br/>
+
+
+
+Nederlands -> English: <a href="javascript:!function()%7Bfunction%20e()%7Bvar%20e%3D%22nlentranslate%22%2Ct%3DjQuery(%22.%22%2Be)%3Bif(0!%3Dt.size())return%20void%20t.remove()%3Bvar%20n%3Dwindow.getSelection()%3Bif(!(n.rangeCount%3C1))%7Bvar%20a%3Dn.toString().split(%22.%20%22)%3BjQuery.get(%22https%3A%2F%2Ftranslate.yandex.net%2Fapi%2Fv1.5%2Ftr.json%2Ftranslate%3Fkey%3Dtrnsl.1.1.20160314T094828Z.9a4a9946c1276589.fc095296bcade3d9bb27e3ea480669b939bf4f9f%26lang%3Dnl-en%26text%3D%22%2Ba.join(%22%26text%3D%22)%2Cfunction(e)%7Bvar%20t%3Ddocument.createElement(%22p%22)%3Bt.innerHTML%3De.text.join(%22.%20%22)%2Ct.className%3D%22nlentranslate%22%2Ct.style.cssText%3D%22font-size%3A60%25%3Bcolor%3Argb(67%2C175%2C1)%3Bline-height%3Anormal%22%3Bvar%20a%3Dn.getRangeAt(0)%3Ba.collapse(!1)%2Ca.insertNode(t)%7D)%7D%7D%22undefined%22%3D%3Dtypeof%20jQuery%3Ffunction()%7Bvar%20t%3Ddocument.createElement(%22script%22)%3Bt.src%3D%22https%3A%2F%2Fcode.jquery.com%2Fjquery.min.js%22%3Bvar%20n%3Ddocument.getElementsByTagName(%22head%22)%5B0%5D%2Ca%3D!1%3Bt.onload%3Dt.onreadystatechange%3Dfunction()%7B!a%26%26(!this.readyState%7C%7C%22loaded%22%3D%3Dthis.readyState%7C%7C%22complete%22%3D%3Dthis.readyState)%26%26(a%3D!0%2Ct.onload%3Dt.onreadystatechange%3Dnull%2Cn.removeChild(t)%2Ce())%7D%2Cn.appendChild(t)%7D()%3Ae()%7D()%3B">NL-EN</a>
+<br/>
+<br/>
+Nederlands -> Russian: <a href="javascript:!function()%7Bfunction%20e()%7Bvar%20e%3D%22nlentranslate%22%2Ct%3DjQuery(%22.%22%2Be)%3Bif(0!%3Dt.size())return%20void%20t.remove()%3Bvar%20n%3Dwindow.getSelection()%3Bif(!(n.rangeCount%3C1))%7Bvar%20a%3Dn.toString().split(%22.%20%22)%3BjQuery.get(%22https%3A%2F%2Ftranslate.yandex.net%2Fapi%2Fv1.5%2Ftr.json%2Ftranslate%3Fkey%3Dtrnsl.1.1.20160314T094828Z.9a4a9946c1276589.fc095296bcade3d9bb27e3ea480669b939bf4f9f%26lang%3Dnl-ru%26text%3D%22%2Ba.join(%22%26text%3D%22)%2Cfunction(e)%7Bvar%20t%3Ddocument.createElement(%22p%22)%3Bt.innerHTML%3De.text.join(%22.%20%22)%2Ct.className%3D%22nlentranslate%22%2Ct.style.cssText%3D%22font-size%3A60%25%3Bcolor%3Argb(67%2C175%2C1)%3Bline-height%3Anormal%22%3Bvar%20a%3Dn.getRangeAt(0)%3Ba.collapse(!1)%2Ca.insertNode(t)%7D)%7D%7D%22undefined%22%3D%3Dtypeof%20jQuery%3Ffunction()%7Bvar%20t%3Ddocument.createElement(%22script%22)%3Bt.src%3D%22https%3A%2F%2Fcode.jquery.com%2Fjquery.min.js%22%3Bvar%20n%3Ddocument.getElementsByTagName(%22head%22)%5B0%5D%2Ca%3D!1%3Bt.onload%3Dt.onreadystatechange%3Dfunction()%7B!a%26%26(!this.readyState%7C%7C%22loaded%22%3D%3Dthis.readyState%7C%7C%22complete%22%3D%3Dthis.readyState)%26%26(a%3D!0%2Ct.onload%3Dt.onreadystatechange%3Dnull%2Cn.removeChild(t)%2Ce())%7D%2Cn.appendChild(t)%7D()%3Ae()%7D()%3B">NL-RU</a>
+
+
+<br/>
+<br/>
+<br/>
+Code:
+<br/>
+<pre>
+(function () {
+    if (typeof jQuery == "undefined") (function () {
+        var script = document.createElement("script");
+        script.src = "https://code.jquery.com/jquery.min.js";
+        var head = document.getElementsByTagName("head")[0],
+                done = !1;
+        script.onload = script.onreadystatechange = function () {
+            !done && (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") && (done = !0, script.onload = script.onreadystatechange = null, head.removeChild(script), translate());
+        };
+        head.appendChild(script);
+    })(); else translate();
+
+    function translate() {
+        var className = "nlentranslate";
+        var elements = jQuery("." + className);
+        if (elements.size() != 0) {
+            elements.remove();
+            return;
+        }
+        var sel = window.getSelection();
+        if (sel.rangeCount < 1) {
+            return;
+        }
+        var arr = sel.toString().split(". ");
+        jQuery.get("https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160314T094828Z.9a4a9946c1276589.fc095296bcade3d9bb27e3ea480669b939bf4f9f&lang=nl-en&text="
+                + arr.join("&text="), function (resp) {
+            var div = document.createElement("p");
+            div.innerHTML = resp.text.join(". ");
+            div.className = "nlentranslate";
+            div.style.cssText = "font-size:60%;color:rgb(67,175,1);line-height:normal";
+            var range = sel.getRangeAt(0);
+            range.collapse(false);
+            range.insertNode(div);
+        });
+    }
+})();
+
+
+</pre>
+</body>
+</html>
